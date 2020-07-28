@@ -2,9 +2,8 @@ import React, {useState, useContext} from 'react';
 import { WordContext } from '../contexts/RandomWordContext';
 
 const FeelingLucky = ({onButtonSubmit}) => {
+
     const {wordContextSeven } = useContext(WordContext);
-    
-   
     const [feelLuckyState, setFeelLuckyState] = useState({data: ''})
 
 
@@ -19,9 +18,9 @@ const FeelingLucky = ({onButtonSubmit}) => {
     }
 
     return ( 
-        <div>
-            <form onSubmit={onFormSubmit}>
-           <button onClick={onInputChange} value={wordContextSeven}>I'm Feeling Lucky</button>
+        <div className="lucky-container">
+            <form className="lucky-btn-form" onSubmit={onFormSubmit}>
+              <button className="lucky-button" onClick={onInputChange} value={wordContextSeven}>Random Word</button>
            </form> 
         </div>
      );

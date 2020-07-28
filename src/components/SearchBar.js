@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
-//import { WordContext } from '../contexts/RandomWordContext';
-
+import {ReactComponent as SearchSVG} from '../images/loupe.svg';
 
 const SearchBar = ({onSearchSubmit,onButtonSubmit}) => {
    // const {wordContextSeven } = useContext(WordContext);
 
-    //console.log(userSubmit)
     const [search, setSearch] = useState({val: ''})
-    //const [feelLuckyState, setFeelLuckyState] = useState({data: ''})
-
 
    const onInputChange = (event) => {
         setSearch({val: event.target.value});
@@ -21,7 +17,27 @@ const SearchBar = ({onSearchSubmit,onButtonSubmit}) => {
         setSearch({val: ''});       
     }
 
-    //  onButtonSubmit(buttonData.data)
+    return ( 
+        <div className="search-container">
+
+            <form onSubmit={onFormSubmit}>
+                     
+                 {/* <label htmlFor="search"><h2>Image Search: </h2></label> */}
+                 <input placeholder="Search.." className="search-bar" type="text" value={search.val} onChange={onInputChange} /> 
+                 <button className="search-icon-container" onChange={onInputChange} value={search}>
+            <SearchSVG />
+                </button> 
+            </form>
+            
+        </div>
+     );
+}
+ 
+export default SearchBar;
+
+    //const [feelLuckyState, setFeelLuckyState] = useState({data: ''})
+
+ //  onButtonSubmit(buttonData.data)
     //  const feelingLuckyOnInputChange = (event) => {
     //     console.log(event.target.value)
     //     setButtonData({data: event.target.value});
@@ -32,15 +48,3 @@ const SearchBar = ({onSearchSubmit,onButtonSubmit}) => {
     //     onButtonSubmit(feelLuckyState);
     //     
     // }
-    return ( 
-        <div>
-            <form onSubmit={onFormSubmit}>
-                 <label htmlFor="search"><h2>Image Search: </h2></label>
-                 <input type="text" value={search.val} onChange={onInputChange} /> 
-                 <button onChange={onInputChange} value={search}>Search</button>          
-            </form>
-        </div>
-     );
-}
- 
-export default SearchBar;

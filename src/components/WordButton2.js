@@ -30,7 +30,7 @@ const WordButtonTwo = ({onButtonSubmit}) => {
         <div>
            <form onSubmit={onFormSubmit}>
                {/* <button onClick={() => setButtonData({ data: buttonOne })}>{buttonOne}</button> */}
-               <button onClick={onInputChange} value={wordContextOne}>{wordContextOne}</button>
+               <button onClick={onInputChange} value={'food and drink'}>food and drink</button>
                 <button onClick={onInputChange} value={wordContextTwo}>{wordContextTwo}</button>
                 <button onClick={onInputChange} value={wordContextThree}>{wordContextThree}</button>  
                 <button onClick={onInputChange} value={wordContextFour}>{wordContextFour}</button>
