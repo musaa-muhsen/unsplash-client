@@ -1,9 +1,11 @@
 import React, {useState, useContext} from 'react';
 import { WordContext } from '../contexts/RandomWordContext';
+import { UnsplashContext } from '../contexts/UnsplashContext';
 
-const FeelingLucky = ({onButtonSubmit}) => {
+const FeelingLucky = () => {
 
     const {wordContextSeven } = useContext(WordContext);
+    const {onButtonSubmit} = useContext(UnsplashContext);
     const [feelLuckyState, setFeelLuckyState] = useState({data: ''})
 
 

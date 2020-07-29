@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState , useContext} from 'react';
 import {ReactComponent as SearchSVG} from '../images/loupe.svg';
+import {UnsplashContext }from '../contexts/UnsplashContext';
 
-const SearchBar = ({onSearchSubmit,onButtonSubmit}) => {
-   // const {wordContextSeven } = useContext(WordContext);
 
+const SearchBar = () => {
+    const { onSearchSubmit } = useContext(UnsplashContext);
+//console.log(onSearchSubmit)
     const [search, setSearch] = useState({val: ''})
 
    const onInputChange = (event) => {
@@ -19,13 +21,11 @@ const SearchBar = ({onSearchSubmit,onButtonSubmit}) => {
 
     return ( 
         <div className="search-container">
-
-            <form onSubmit={onFormSubmit}>
-                     
+             <form onSubmit={onFormSubmit}>                  
                  {/* <label htmlFor="search"><h2>Image Search: </h2></label> */}
                  <input placeholder="Search photos" className="search-bar" type="text" value={search.val} onChange={onInputChange} /> 
                  <button className="search-icon-container" onChange={onInputChange} value={search}>
-            <SearchSVG />
+                    <SearchSVG />
                 </button> 
             </form>
             

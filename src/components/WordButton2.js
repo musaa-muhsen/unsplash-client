@@ -1,29 +1,30 @@
 import React, {useContext, useState} from 'react';
 import { WordContext } from '../contexts/RandomWordContext';
+import { UnsplashContext } from '../contexts/UnsplashContext';
 
 
 
-const WordButtonTwo = ({onButtonSubmit}) => {
+const WordButtonTwo = () => {
 
     //const randomGen = Math.floor(Math.random() * 3);
     const {wordContextOne,wordContextTwo,wordContextThree,wordContextFour,wordContextFive,wordContextSix } =  useContext(WordContext);
+    const {onButtonSubmit} = useContext(UnsplashContext);
+   // console.log(onButtonSubmit)
+
     //const {wordsArr} =  useContext(WordContext);
     const [buttonData, setButtonData] = useState({data: ''});
 
-  
-
     //onButtonSubmit(buttonData.data)
     const onInputChange = (event) => {
-        console.log(event.target.value)
+        //console.log(event.target.value)
         setButtonData({data: event.target.value});
     }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        onButtonSubmit(buttonData.data)
+        onButtonSubmit(buttonData.data);
         //console.log(buttonData.data)
         setButtonData({data: ''});
-
     }
 
     return (    

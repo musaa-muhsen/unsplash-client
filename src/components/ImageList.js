@@ -1,30 +1,40 @@
-import React from 'react';
-import {v4} from 'uuid';
-import NoImage from './NoImage';
-
-const  ImageList = ({imagesProp, noImages}) => {
-   
+import React , {useContext, useEffect} from 'react';
+//import {v4} from 'uuid';
+//import NoImage from './NoImage';
+import { UnsplashContext} from '../contexts/UnsplashContext';
 
 
-   if (noImages === true) {  
-         return (
-            <div className="no-image-container"> 
-            <h1>No images!</h1>
-            </div>        
-         )
-   } 
-      
-   
-   const imgs = imagesProp.map(img => {
+const ImageList = () => {
+
+  const { images} = useContext(UnsplashContext);
+  console.log(images);
+
+  useEffect(() => {
+    console.log('rendered')
+}, []);
+
+  const imageOutcome = images.length === 0 ? (
+   <div className="no-image-container"> 
+   <h1>No images!</h1>
+   </div>  
+  ) : (
+         images.map(img => {
+      return (    
+<img key={img.id} src={img.urls.small} alt={img.alt_description} />
+             )
+        })
+  )
+
+  /*
+  const imgs = images.map(img => {
         return (    
 <img key={img.id} src={img.urls.small} alt={img.alt_description} />
                )
           });
-
-
+*/
     return (     
          <div className="image-container">       
-            {imgs}          
+            {imageOutcome}          
          </div>
      );
 }
@@ -50,3 +60,14 @@ export default ImageList;
 */
 
 /* <div key={v4()} className="container-button"> */
+
+/*
+  if (noImages === true) {  
+         return (
+            <div className="no-image-container"> 
+            <h1>No images!</h1>
+            </div>        
+         )
+   }
+{imagesProp, noImages}
+*/
