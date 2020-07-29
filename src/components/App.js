@@ -4,19 +4,34 @@ import SearchBar from './SearchBar';
 import RandomWordContext from '../contexts/RandomWordContext';
 import WordButtonTwo from './WordButton2';
 import FeelingLucky from './FeelingLucky';
+//import NoImage from './NoImage';
+import Footer from './Footer';
 
 
 
 const App = () => {
  
   const [images, setImages ]= useState([]);
+  const [noImages, setNoImages] = useState(false)
   
+
    const onSearchSubmit = async (word) => {
-    console.log(word.val)
-    const response = await fetch(`/api/${word.val}`);
-    const data = await response.json();
-    console.log(data)
-    setImages(data.results)
+     try {
+      console.log(word.val)
+      const response = await fetch(`/api/${word.val}`);
+      const data = await response.json();
+
+      if (data.total === 0) {
+          setNoImages(true)
+      } else {
+           setImages(data.results)
+      } 
+    }
+       catch (error) {
+           console.log(error);
+           setNoImages(true)
+     }
+   
    }
 
 
@@ -25,7 +40,7 @@ const onButtonSubmit = async (word) => {
    //const response = await fetch('/api/images');
    const response = await fetch(`/api/${word}`);   
    const unsplashData = await response.json();
-   console.log(unsplashData)
+   console.log(unsplashData.results)
    setImages(unsplashData.results)
   }
 
@@ -34,13 +49,14 @@ const onButtonSubmit = async (word) => {
     <div className="App"> 
     <RandomWordContext>   
        <div className="search-main-container">
-           <SearchBar onSearchSubmit={onSearchSubmit} onButtonSubmit={onButtonSubmit}/>    
-            
+           <SearchBar onSearchSubmit={onSearchSubmit} onButtonSubmit={onButtonSubmit}/>           
        </div>
        <FeelingLucky onButtonSubmit={onButtonSubmit} /> 
-          <WordButtonTwo onButtonSubmit={onButtonSubmit} />            
+       <WordButtonTwo onButtonSubmit={onButtonSubmit} />            
     </RandomWordContext>
-           <ImageList imagesProp={images} /> 
+           <ImageList noImages={noImages} imagesProp={images} />
+           
+           <Footer />
     </div>
    );
 }
@@ -48,15 +64,7 @@ const onButtonSubmit = async (word) => {
 
 export default App;
 
-
-
-
-
-
-
-
-
-
+// <NoImage noImages={noImages} />
 
 
   // useEffect(() => {

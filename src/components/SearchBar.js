@@ -23,7 +23,7 @@ const SearchBar = ({onSearchSubmit,onButtonSubmit}) => {
             <form onSubmit={onFormSubmit}>
                      
                  {/* <label htmlFor="search"><h2>Image Search: </h2></label> */}
-                 <input placeholder="Search.." className="search-bar" type="text" value={search.val} onChange={onInputChange} /> 
+                 <input placeholder="Search photos" className="search-bar" type="text" value={search.val} onChange={onInputChange} /> 
                  <button className="search-icon-container" onChange={onInputChange} value={search}>
             <SearchSVG />
                 </button> 
