@@ -6,31 +6,47 @@ const RandomWordContext = (props) => {
 
     const randomGen = Math.floor(Math.random() * 17);
 
-    const wordsArr1 = ['moon','stars','sky','galaxy','dark',
+    const wordsArr1 = ['stars','milky way','moon','space','universe',
+    'night sky','aurora','nebula','outer space','','',
+    '','','','','',''];
+
+    const wordsArr2 = ['red','yellow','blue','brown','orange',
+    'green','violet','black','pink','blue green','violet',
+    'white','crimson','navy','yellow green','scarlet','grey'];
+
+    const wordsArr3 = ['car','football','classic car','ship','boat',
+    'stadium','gym','','yoga','basketball','',
+    '','','','','',''];
+
+    const wordsArr4 = ['portrait','face','smile','sad','woman',
+    'man','model','face','hair','','',
+    '','','','','',''];
+
+    const wordsArr5 = ['texture','living room','wood background','background texture','abstract',
+    'pattern','geometric','door','apartment','house','street',
+    'architecture','urban','office building','city ','',''];
+
+    const wordsArr6 = ['new york','athens','tokyo','delhi','mexico city',
+    'cairo','sao paulo','istanbul','rio de janeiro','paris','london',
+    'jakarta','seoul','madrid','toronto','barcelona','miami'];
+
+    const wordsArr7 = ['film','movie','sky','galaxy','dark',
     'light','aurora','milky way','pink','red','blue',
     'green','crimson','orange','blue','black','grey'];
 
-    const wordsArr2 = ['moon','stars','sky','galaxy','dark',
+    const wordsArr8 = ['moon','stars','sky','galaxy','dark',
     'light','aurora','milky way','pink','red','blue',
     'green','crimson','orange','blue','black','grey'];
 
-    const wordsArr3 = ['moon','stars','sky','galaxy','dark',
+    const wordsArr9 = ['moon','stars','sky','galaxy','dark',
     'light','aurora','milky way','pink','red','blue',
     'green','crimson','orange','blue','black','grey'];
 
-    const wordsArr4 = ['moon','stars','sky','galaxy','dark',
+    const wordsArr10 = ['moon','stars','sky','galaxy','dark',
     'light','aurora','milky way','pink','red','blue',
     'green','crimson','orange','blue','black','grey'];
 
-    const wordsArr5 = ['moon','stars','sky','galaxy','dark',
-    'light','aurora','milky way','pink','red','blue',
-    'green','crimson','orange','blue','black','grey'];
-
-    const wordsArr6 = ['moon','stars','sky','galaxy','dark',
-    'light','aurora','milky way','pink','red','blue',
-    'green','crimson','orange','blue','black','grey'];
-
-    const wordsArr7 = ['moon','stars','sky','galaxy','dark',
+    const wordsArrL  = ['moon','stars','sky','galaxy','dark',
     'light','aurora','milky way','pink','red','blue',
     'green','crimson','orange','blue','black','grey'];
 
@@ -41,10 +57,15 @@ const RandomWordContext = (props) => {
     const wordContextFive = wordsArr5[randomGen];
     const wordContextSix = wordsArr6[randomGen];
     const wordContextSeven = wordsArr7[randomGen];
+    const wordContextEight = wordsArr8[randomGen];
+    const wordContextNine = wordsArr9[randomGen];
+    const wordContextTen = wordsArr10[randomGen];
+
+    const wordContextLucky = wordsArrL[randomGen];
     
     
     return ( 
-        <WordContext.Provider value={{wordContextOne,wordContextTwo,wordContextThree,wordContextFour,wordContextFive,wordContextSix,wordContextSeven}}>
+        <WordContext.Provider value={{wordContextOne,wordContextTwo,wordContextThree,wordContextFour,wordContextFive,wordContextSix,wordContextSeven,wordContextEight,wordContextNine,wordContextTen,wordContextLucky}}>
             {props.children}
         </WordContext.Provider>
      );

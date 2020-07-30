@@ -6,7 +6,7 @@ import { UnsplashContext } from '../contexts/UnsplashContext';
 
 const WordButtonTwo = () => {
 
-    //const randomGen = Math.floor(Math.random() * 3);
+    
     const {wordContextOne,wordContextTwo,wordContextThree,wordContextFour,wordContextFive,wordContextSix } =  useContext(WordContext);
     const {onButtonSubmit} = useContext(UnsplashContext);
    // console.log(onButtonSubmit)
@@ -31,7 +31,7 @@ const WordButtonTwo = () => {
         <div>
            <form onSubmit={onFormSubmit}>
                {/* <button onClick={() => setButtonData({ data: buttonOne })}>{buttonOne}</button> */}
-               <button onClick={onInputChange} value={'food and drink'}>food and drink</button>
+               <button onClick={onInputChange} value={wordContextOne}>{wordContextOne}</button>
                 <button onClick={onInputChange} value={wordContextTwo}>{wordContextTwo}</button>
                 <button onClick={onInputChange} value={wordContextThree}>{wordContextThree}</button>  
                 <button onClick={onInputChange} value={wordContextFour}>{wordContextFour}</button>

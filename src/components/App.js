@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ImageList from './ImageList';
 import SearchBar from './SearchBar';
 import RandomWordContext from '../contexts/RandomWordContext';
@@ -7,6 +7,9 @@ import WordButtonTwo from './WordButton2';
 import FeelingLucky from './FeelingLucky';
 //import NoImage from './NoImage';
 import Footer from './Footer';
+import Navbar from './Navbar';
+import {BrowserRouter, Route, Link} from "react-router-dom"; 
+
 
 
 const App = () => {
@@ -30,21 +33,24 @@ const onButtonSubmit = async (word) => {
 */
   
   return ( 
-    <div className="App"> 
+    <BrowserRouter>
+    <div className="App">
+        <Navbar /> 
 <UnsplashContextComp>
     <RandomWordContext>   
+
          <div className="search-main-container">
            <SearchBar/>           
          </div>
-         
        <FeelingLucky/> 
        <WordButtonTwo/> 
-       <ImageList />         
+       <Route exact path="/" component={ImageList} />     
+
        </RandomWordContext>
-</UnsplashContextComp>
+      </UnsplashContextComp>
            <Footer />
-           
     </div>
+    </BrowserRouter>
    );
 }
  
