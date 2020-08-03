@@ -1,4 +1,5 @@
 import React , {useContext, useEffect, useRef, useState} from 'react';
+
 //import {v4} from 'uuid';
 //import NoImage from './NoImage';
 import { UnsplashContext} from '../contexts/UnsplashContext';
@@ -23,7 +24,7 @@ const ImageList = () => {
    imgCurrent === 1  ?  <div className="no-image-container"> 
    <h1>No images!</h1>
    </div>  : 
-   <div ></div>
+   <div className="when-first-renders-container"></div>
   ) : (
          images.map(img => {
       return (    

@@ -1,22 +1,28 @@
 import React, { useState , useContext} from 'react';
 import {ReactComponent as SearchSVG} from '../images/loupe.svg';
 import {UnsplashContext }from '../contexts/UnsplashContext';
+//import SearchAgain from './SearchAgain';
 
 
 const SearchBar = () => {
     const { onSearchSubmit } = useContext(UnsplashContext);
 //console.log(onSearchSubmit)
     const [search, setSearch] = useState({val: ''})
+    //const [noVal, setNoVal] = useState(false);
+//console.log(search.val)
 
    const onInputChange = (event) => {
-        setSearch({val: event.target.value});
-        //setFeelLuckyState({data: event.target.value})
+    setSearch({val: event.target.value});
+ //setFeelLuckyState({data: event.target.value})
     }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        onSearchSubmit(search)       
-        setSearch({val: ''});       
+        // if (search.val === '') {
+        //     setNoVal(true);
+        // } else {
+        onSearchSubmit(search);       
+        setSearch({val: ''});         
     }
 
     return ( 
@@ -28,7 +34,7 @@ const SearchBar = () => {
                     <SearchSVG />
                 </button> 
             </form>
-            
+          
         </div>
      );
 }

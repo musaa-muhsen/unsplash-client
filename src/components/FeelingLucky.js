@@ -1,12 +1,15 @@
 import React, {useState, useContext} from 'react';
 import { WordContext } from '../contexts/RandomWordContext';
 import { UnsplashContext } from '../contexts/UnsplashContext';
+//import {ThemeContext}  from '../contexts/ThemeContextProvider';
+
 
 const FeelingLucky = () => {
 
     const {wordContextSeven } = useContext(WordContext);
     const {onButtonSubmit} = useContext(UnsplashContext);
-    const [feelLuckyState, setFeelLuckyState] = useState({data: ''})
+    const [feelLuckyState, setFeelLuckyState] = useState({data: ''});
+    
 
 
    const onInputChange = (event) => {

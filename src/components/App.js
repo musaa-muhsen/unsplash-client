@@ -7,8 +7,11 @@ import WordButtonTwo from './WordButton2';
 import FeelingLucky from './FeelingLucky';
 //import NoImage from './NoImage';
 import Footer from './Footer';
+import About from './About';
 import Navbar from './Navbar';
-import {BrowserRouter, Route, Link} from "react-router-dom"; 
+import {BrowserRouter, Route} from "react-router-dom"; 
+import ThemeContextProviderComp  from '../contexts/ThemeContextProvider';
+
 
 
 
@@ -34,22 +37,24 @@ const onButtonSubmit = async (word) => {
   
   return ( 
     <BrowserRouter>
-    <div className="App">
-        <Navbar /> 
-<UnsplashContextComp>
+      <ThemeContextProviderComp>
+        <Navbar />  
+    <UnsplashContextComp>
     <RandomWordContext>   
 
          <div className="search-main-container">
-           <SearchBar/>           
-         </div>
-       <FeelingLucky/> 
-       <WordButtonTwo/> 
-       <Route exact path="/" component={ImageList} />     
-
+       <Route exact path="/" component={SearchBar} />          
+         </div>  
+       <Route exact path="/" component={FeelingLucky} />
+       <Route exact path="/" component={WordButtonTwo} />   
+       <Route exact path="/" component={ImageList} /> 
        </RandomWordContext>
       </UnsplashContextComp>
+      <Route exact path="/about" component={About} />  
+     
            <Footer />
-    </div>
+    
+    </ThemeContextProviderComp>
     </BrowserRouter>
    );
 }
