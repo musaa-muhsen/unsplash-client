@@ -27,9 +27,11 @@ const WordButtonTwo = () => {
         setButtonData({data: ''});
     }
 
-    return (    
-        <div>
-           <form onSubmit={onFormSubmit}>
+    return (   
+         
+        
+
+           <form className="buttons-container" onSubmit={onFormSubmit}>
                {/* <button onClick={() => setButtonData({ data: buttonOne })}>{buttonOne}</button> */}
                <button onClick={onInputChange} value={wordContextOne}>{wordContextOne}</button>
                 <button onClick={onInputChange} value={wordContextTwo}>{wordContextTwo}</button>
@@ -37,9 +39,17 @@ const WordButtonTwo = () => {
                 <button onClick={onInputChange} value={wordContextFour}>{wordContextFour}</button>
                 <button onClick={onInputChange} value={wordContextFive}>{wordContextFive}</button>
                 <button onClick={onInputChange} value={wordContextSix}>{wordContextSix}</button> 
+                <button onClick={onInputChange} value={wordContextOne}>{wordContextOne}</button>
+                <button onClick={onInputChange} value={wordContextTwo}>{wordContextTwo}</button>
+                <button onClick={onInputChange} value={wordContextThree}>{wordContextThree}</button>  
+                <button onClick={onInputChange} value={wordContextFour}>{wordContextFour}</button>
+                <button onClick={onInputChange} value={wordContextFive}>{wordContextFive}</button>
+                <button onClick={onInputChange} value={wordContextSix}>{wordContextSix}</button> 
+                <button onClick={onInputChange} value={wordContextOne}>{wordContextOne}</button>
+                <button onClick={onInputChange} value={wordContextTwo}>{wordContextTwo}</button>
   
            </form> 
-       </div>
+       
      );
 }
  

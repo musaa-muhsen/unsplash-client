@@ -1,8 +1,11 @@
 import React from 'react';
 
 const Footer = () => {
+
+    const yearAndYears = new Date().getFullYear();
+    console.log(yearAndYears)
     return ( 
-        <div>Musaa Muhsen 2020 &copy;</div>
+        <footer><p>made by <a href="https://musaamuhsen.com/">musaamuhsen.com</a> &copy; {yearAndYears}</p></footer>
      );
 }
  

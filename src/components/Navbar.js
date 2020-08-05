@@ -1,29 +1,21 @@
-import React, { useContext} from 'react';
+import React from 'react';
  import { NavLink} from 'react-router-dom';
-import {ThemeContext}  from '../contexts/ThemeContextProvider';
-import ThemeToggle from './ThemeToggle';
+//import {ThemeContext}  from '../contexts/ThemeContextProvider';
+//import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
-   
- const {isLightTheme, light, dark} = useContext(ThemeContext);
- console.log(isLightTheme, light)
-   const theme =  isLightTheme ?  light : dark;   
-   
-   console.log(theme.uiElement)
 
-    //const { darkMode, isdarkMode } = useContext(ColorContext);
-    //console.log(darkMode)
-    //console.log(setDarkMode)
-    //<button onClick={() setDarkMode(!darkMode)}>
-    //() => setDarkMode(prevMode => !prevMode)
-
-   // const linkHome = "link-home"
     return (
-      <div style={{background: theme.bg}}>     
-       <NavLink className={`${"link-home"} ${"car"}`} activeClassName="active-link" exact to="/">Home</NavLink>
+      <header className="nav-container">     
+      <div className="block-logo"> 
+       <NavLink activeClassName="active-link" exact to="/">Photostock<br/>helper</NavLink>
+       </div>
+       <div className="block-empty"> </div>
+       <div className="block-about"> 
        <NavLink activeClassName="active-link" to="/about">About</NavLink>
-       <ThemeToggle />
-      </div>    
+       </div>
+       
+      </header>    
     );
 }
  
@@ -79,3 +71,19 @@ export default Navbar;
       </div>
 
 */
+
+   /*
+ const {isLightTheme, light, dark} = useContext(ThemeContext);
+ console.log(isLightTheme, light)
+   const theme =  isLightTheme ?  light : dark;   
+   
+   console.log(theme.uiElement)
+
+    //const { darkMode, isdarkMode } = useContext(ColorContext);
+    //console.log(darkMode)
+    //console.log(setDarkMode)
+    //<button onClick={() setDarkMode(!darkMode)}>
+    //() => setDarkMode(prevMode => !prevMode)
+
+   // const linkHome = "link-home"
+   */

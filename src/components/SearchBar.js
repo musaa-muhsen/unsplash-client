@@ -1,5 +1,5 @@
 import React, { useState , useContext} from 'react';
-import {ReactComponent as SearchSVG} from '../images/loupe.svg';
+import {ReactComponent as SearchSVG} from '../images/search-2.svg';
 import {UnsplashContext }from '../contexts/UnsplashContext';
 //import SearchAgain from './SearchAgain';
 

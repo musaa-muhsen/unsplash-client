@@ -1,31 +1,44 @@
-import React, { createContext, useState, useEffect }  from 'react';
+import React, { createContext, useState, useEffect, useRef }  from 'react';
 export const ThemeContext = createContext();
 
 const ThemeContextProviderComp = (props) => {
 
   let [themeColor, setThemeColor] = useState(getInitialMode());
+  const [themeColorBool, setThemeColorBool] = useState(true) 
 //
 useEffect(() => {
   localStorage.setItem('dark', JSON.stringify(themeColor));
-},[themeColor, setThemeColor]);
+});
 
 function getInitialMode() {
    const savedMode = JSON.parse(localStorage.getItem('dark'));
-   return savedMode || false;
+   return savedMode || true;
 }
 
+const isInitialMount = useRef(true);
+
+useEffect(() => {
+ if (isInitialMount.current) {
+    isInitialMount.current = false;
+    themeColorBool = true;
+ } 
+});
+
+
+const themeColorMaker = themeColorBool === true ? setThemeColorBool(false) : setThemeColorBool(true);
+console.log(themeColorMaker);
+
 const toggleTheme = () => {      
-  const themeColorBool = themeColor.isLightTheme === false ? true : false;
-  console.log(themeColorBool)
+  
    setThemeColor({
     // nested object literal
-    isLightTheme: themeColorBool,
+    isLightTheme: themeColorMaker,
     light: {fontColor: '#555', uiElement: '#ddd', bg: '#eee'},
     dark:  {fontColor: '#ddd', uiElement: '#333', bg: '#555'}
 })
 }
 
-console.log(themeColor)
+
 
   
 

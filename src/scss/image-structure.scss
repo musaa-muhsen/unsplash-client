@@ -1,38 +1,3 @@
-@import "nav.scss";
-@import "suggest-words.scss";
-@import "toggle.scss";
-@import "imagecondition.scss";
-@import "image-structure.scss";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-* {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      // outline: red solid 1px;      
-}
-body {
-    font-family: 'Open Sans',"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-    color: #111111;
-}
-button, input {
-    
-    font-family: 'Open Sans',"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-
-
-}
-
-#root {
-    margin: 0 auto;
-    width: 1500px;
-    max-width: 100%;
-}
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
-
 .image-container {
     margin: 20px auto;
 }

@@ -9,35 +9,17 @@ import FeelingLucky from './FeelingLucky';
 import Footer from './Footer';
 import About from './About';
 import Navbar from './Navbar';
+import ButtonTitle from './ButtonTitle';
 import {BrowserRouter, Route} from "react-router-dom"; 
-import ThemeContextProviderComp  from '../contexts/ThemeContextProvider';
+//import ThemeContextProviderComp  from '../contexts/ThemeContextProvider';
 
 
 
 
 const App = () => {
- /*
-  const [images, setImages ]= useState([]);
-  //const [noImages, setNoImages] = useState(false)
-  
-
-   const onSearchSubmit = async (word) => {
-      const response = await fetch(`/api/${word.val}`);
-      const data = await response.json();
-      setImages(data.results)
-   }
-
-
-const onButtonSubmit = async (word) => {
-   const response = await fetch(`/api/${word}`);   
-   const unsplashData = await response.json();
-   setImages(unsplashData.results)
-  }
-*/
   
   return ( 
     <BrowserRouter>
-      <ThemeContextProviderComp>
         <Navbar />  
     <UnsplashContextComp>
     <RandomWordContext>   
@@ -46,7 +28,10 @@ const onButtonSubmit = async (word) => {
        <Route exact path="/" component={SearchBar} />          
          </div>  
        <Route exact path="/" component={FeelingLucky} />
-       <Route exact path="/" component={WordButtonTwo} />   
+       <div className="button-main-container"> 
+       <Route exact path="/" component={ButtonTitle} />
+       <Route exact path="/" component={WordButtonTwo} /> 
+       </div>  
        <Route exact path="/" component={ImageList} /> 
        </RandomWordContext>
       </UnsplashContextComp>
@@ -54,7 +39,6 @@ const onButtonSubmit = async (word) => {
      
            <Footer />
     
-    </ThemeContextProviderComp>
     </BrowserRouter>
    );
 }
@@ -127,4 +111,24 @@ export default App;
        <ImageList  imagesProp={images} /> 
 </UnsplashContextComp>
            <Footer />
+*/
+
+
+ /*
+  const [images, setImages ]= useState([]);
+  //const [noImages, setNoImages] = useState(false)
+  
+
+   const onSearchSubmit = async (word) => {
+      const response = await fetch(`/api/${word.val}`);
+      const data = await response.json();
+      setImages(data.results)
+   }
+
+
+const onButtonSubmit = async (word) => {
+   const response = await fetch(`/api/${word}`);   
+   const unsplashData = await response.json();
+   setImages(unsplashData.results)
+  }
 */

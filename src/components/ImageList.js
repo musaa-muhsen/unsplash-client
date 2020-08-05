@@ -1,4 +1,6 @@
 import React , {useContext, useEffect, useRef, useState} from 'react';
+import ModalImage from "react-modal-image";
+
 
 //import {v4} from 'uuid';
 //import NoImage from './NoImage';
@@ -6,9 +8,13 @@ import { UnsplashContext} from '../contexts/UnsplashContext';
 
 const ImageList = () => {
 
+   // js image conditional 
   const { images} = useContext(UnsplashContext);
   const [imgCurrent, setImgCurrent] = useState(0);
   const isInitialMount = useRef(true);
+  //const isInitialMountFalse = useRef(false);
+
+  //console.log(images)
 
   useEffect(() => {
    if (isInitialMount.current) {
@@ -18,23 +24,54 @@ const ImageList = () => {
    }
 },[imgCurrent,setImgCurrent,isInitialMount,images]);
 
+const imageRef = useRef();
 
 
+// useEffect(() => {
+//    if (!isInitialMountFalse.current) {
+//       isInitialMountFalse.current = true;
+//       imageRef.current.style.background = "yellow"
+
+//    } else { 
+//       imageRef.current.style.background = "white"
+
+//    }
+// },[]);
+
+// renders conditional 
   const imageOutcome = images.length === 0 ? (
    imgCurrent === 1  ?  <div className="no-image-container"> 
    <h1>No images!</h1>
    </div>  : 
-   <div className="when-first-renders-container"></div>
+   <div  className="when-first-renders-container" style={{gridAutoRows: "0"}}>
+     
+   </div>
   ) : (
          images.map(img => {
-      return (    
-<img key={img.id} src={img.urls.small} alt={img.alt_description} />
+           
+      return (   
+         
+         <ModalImage
+         
+         showRotate={true}
+         hideDownload={true}
+         key={img.id}
+  small={img.urls.small}
+  large={img.urls.regular}
+  
+ 
+  imageBackgroundColor="#FFFFFF"
+  className="image-wrapper"
+  id="image-wrapper"
+  
+/>
+
              )
         })
   )
 
     return (     
-         <div className="image-container">       
+         <div ref={imageRef} className="image-container">       
             {imageOutcome}          
          </div>
      );
@@ -84,6 +121,26 @@ export default ImageList;
 <img key={img.id} src={img.urls.small} alt={img.alt_description} />
                )
           });
-*/
+          <img key={img.id} src={img.urls.small} alt={img.alt_description} />
+//grid system 
+const [imageLayout,setImageLayout] = useState({span: 0});
 
+const imageRef = useRef(null);
+console.log(imageRef);
+
+
+
+const setSpan = () => {
+   const height = imageRef.current.clientHeight;
+   const spanRows = Math.ceil(height / 10);
+   setImageLayout({spans:spanRows });
+
+}
+
+useEffect(() => {
+   imageRef.current.setSpan()
+
+},[setSpan,imageLayout,setImageLayout])
+*/
+//<p><img alt="opening-random" className="" src="https://source.unsplash.com/random/800x500" /> </p>
 //console.log(imgCurrent);

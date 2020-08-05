@@ -1,24 +1,24 @@
-.search-main-container {
 
-    background: lightblue
-    ;
+// search bar ======================================
+.search-main-container {
+  margin: 40px auto 20px auto;
+    //background: lightblue;
     display: flex;
-    width: 600px;
+    width: auto;
     .search-container {
         margin: auto;
-    }
-    
-    .search-bar {
-        
-        width: 500px;
-        padding: 5px 4px;
+    } 
+    .search-bar { 
+        width: 99%;
+        padding: 10px 20px;
        border: 0 solid transparent;
         border-radius: 20px 0 0 20px;  
         
-        background-color: lightgrey;    
+        background-color: #eee;    
 
     }
     .search-icon-container {
+        background-color: #eee; 
         cursor:pointer;
         border: 0 solid transparent;
         padding: 6px;
@@ -31,27 +31,31 @@
 
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: red;
+    color: #111111;
     opacity: 1; /* Firefox */
-  }
-  #Capa_1 {
-      width: 12px;
+    
   }
 
+
+  // random word ===================================================
 .lucky-container {
-    width: 600px;
+
+
+    width: auto;
+    font-size: 1.1rem;
    // background: lightgrey;
     display: flex;
+    margin: 0 auto;
     
     .lucky-btn-form {
         
         display: block;
         margin: auto;
         .lucky-button {
-            transition: all 0.3s ;
+            transition: all 0.3s;
             background: #fff;
             border-radius: 5px;
-           padding: 6px;
+           padding: 10px 12px;
            border: #d1d1d1 solid 1px;
            &:hover {
                border: #767676 solid 1px;
@@ -64,3 +68,55 @@
     }     
 }
 
+// button suggestions ===========================================================
+.button-main-container {
+    margin: 40px auto;
+    width: 100%;
+.button-title {
+    margin-bottom: 20px;
+    padding-left: 6px;
+    font-size: 1.3rem;
+}
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    
+    width: auto;
+    //background: lightyellow;
+    @media all and (max-width: 501px) {
+        width: 100%;
+}
+    button {
+        cursor:pointer;
+        background: #0077ED;
+        border: transparent 0px solid;
+        color: #fff;
+        padding: 6px 13px;
+        border-radius: 23px;
+        text-transform: capitalize;
+        font-weight: 500;
+     margin: 8px;
+     transition: all 0.3s;
+    
+    }
+
+    button:hover {
+        background: #eee;
+        color:  #111;
+    }
+    button:first-child {
+
+    }
+    button:last-child {
+
+    }
+}
+}
+
+.button-main-wrapper {
+   // margin: 30px auto;
+    //display: flex;
+}
