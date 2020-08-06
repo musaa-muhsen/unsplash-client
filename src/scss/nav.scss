@@ -52,16 +52,17 @@
        display: flex;
         font-weight: 700;
         a {
+          padding-right: 5px;
           font-size: 1.2rem;
           display: block;
           //color: #000;
           margin: auto;
-          //padding-right: 10px;
+          
           transition: all 0.3s;
         }
         @media all and (max-width: 550px) {
           a {
-            padding-right: 5px;
+            
             font-size: 1rem;
           }
         }
@@ -70,15 +71,20 @@
 
  footer {
   
-   margin-top: 20px;
-   margin-bottom: 20px;
+   margin-top: 50px;
+   margin-bottom: 50px;
    width: 100%;
    display: flex;
+   @media all and (max-width: 550px) {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    }
    p {
      font-weight: 700;
      //text-transform: uppercase;
      margin: auto;
    }
  }
+
 
 

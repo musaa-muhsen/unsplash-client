@@ -1,9 +1,9 @@
 @import "nav.scss";
 @import "suggest-words.scss";
 @import "toggle.scss";
-@import "imagecondition.scss";
+
 @import "image-structure.scss";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 * {
         padding: 0;
         margin: 0;
@@ -11,12 +11,12 @@
       // outline: red solid 1px;      
 }
 body {
-    font-family: 'Open Sans',"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     color: #111111;
 }
 button, input {
     
-    font-family: 'Open Sans',"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-family:  "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 
 
 }
@@ -33,148 +33,23 @@ button:focus {
     outline: none;
 }
 
-.image-container {
-    margin: 20px auto;
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select:focus,
+textarea {
+  font-size: 16px;
 }
 
-
-.__react_modal_image__modal_container {
-    background-color: rgba(0, 0, 0, 0.7) !important;
-        overflow: auto !important;
-
-}
-.__react_modal_image__header {
-    background-color: rgba(0, 0, 0, 0.7) !important;    
-}
-.__react_modal_image__modal_content {
-    margin-top: 5vh !important;
-}
-.image-container div {
-    display: flex;
-    img.image-wrapper {
-        margin: auto;
-    }
-}
-@media all and (min-width: 550px) {
-    .image-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        grid-gap: 10px;
-    }
-    
-    .image-container img.image-wrapper {
-        width: 250px !important;
-    }
-    //.__react_modal_image__icon_menu {
-        //grid-column: 2, span 1 !important;
-    //     float: none !important;
-    //}
-    #react-modal-image-img {
-       width: 700px !important;
-       height: auto !important;
-    }
-
-}
-
-
-// max 550px =================================================================
-@media all and (max-width: 900px) and (min-width: 550px) {
-
-    #react-modal-image-img {
-        width: 95% !important;
-        height: auto !important;
-     }
-
-.image-container {
-  display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 12px;
-    grid-auto-rows: auto;
-}
-
-.image-container img.image-wrapper {
-    width: 200px !important;
-}
-}
-
-// 550px =================================================================
-@media all and (max-width: 549px) {
-
-    #react-modal-image-img {
-        width: 95% !important;
-        height: auto !important;
-     }
-
-.image-container {
-  display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 10px;
-    grid-auto-rows: 280px;
-
-}
-
-.image-container img.image-wrapper {
-    width: 180px !important;
-}
-}
-
-// ==========================================
-
-
-//=============================================================
-
-.about-main-container {
-    width: 500px;
-    margin: 0 auto;
-   h2 {
-       margin: 40px 0;
-      
-       
-   }
-    p {
-      
-        font-weight: 700;
-        font-size: 1rem;
-        span {
-            // background: #0077ED;
-            // padding: 1px;
-            // color: #eee;
-        }
-       
-    }
-}
-
-//.image-container img.image-wrapper {
-    //width: 250px;
-//}
-
-// .container-button {
-//         position: relative;
-//         width: 50%;
-//       }
-      
-      // /* Make the image responsive */
-      // .container-button img {
-      //   width: 100%;
-      //   height: auto;
-      // }
-      
-      // /* Style the button and place it in the middle of the container/image */
-      // .container-button .btn {
-      //   position: absolute;
-      //   top: 50%;
-      //   left: 50%;
-      //   transform: translate(-50%, -50%);
-      //   -ms-transform: translate(-50%, -50%);
-      //   background-color: #555;
-      //   color: white;
-      //   font-size: 16px;
-      //   padding: 12px 24px;
-      //   border: none;
-      //   cursor: pointer;
-      //   border-radius: 5px;
-      // }
-      
-      // .container-button .btn:hover {
-      //   background-color: black;
-      // }

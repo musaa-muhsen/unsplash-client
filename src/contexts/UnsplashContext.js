@@ -5,32 +5,47 @@ export const UnsplashContext = createContext();
 const UnsplashContextComp = (props) => {
    
   const [images, setImages ]= useState([]);
+  const [errorHandler, setErrorHandler] = useState(false);
+
  
 
      const onSearchSubmit = async (word)=> {
            try {
+             //setTheWordSearch(word);
+             
             const response = await fetch(`/api/${word.val}`);
             const data = await response.json();
             setImages(data.results);
            } catch (err) {
-             console.log(err)
+             console.log(err, 'car')
+             setErrorHandler(true);
            }     
         }
 
 
 const onButtonSubmit = async (word) => {
     try {
+      //setTheWordBTN(word);
    const response = await fetch(`/api/${word}`);   
    const unsplashData = await response.json();
    setImages(unsplashData.results)
    //console.log(unsplashData)
        } catch (err) { 
-    console.log(err)
+    console.log(err);
+    setErrorHandler(true);
      }
   }
 
+  // const errorHandler = () => {
+  //  return (
+  //    <h1>no!</h1>
+  //  )
+   
+  // }
+
+
     return ( 
-        <UnsplashContext.Provider value={{onButtonSubmit, onSearchSubmit, images}}>
+        <UnsplashContext.Provider value={{onButtonSubmit, onSearchSubmit, images, errorHandler}}>
             {props.children}
         </UnsplashContext.Provider>
      );
@@ -76,3 +91,6 @@ useEffect(() => {
 //
    
 // try style display none 
+
+  //const [theWordSearch, setTheWordSearch] = useState(null);
+  //const [theWordBTN, setTheWordBTN] = useState();

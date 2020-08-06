@@ -1,15 +1,19 @@
 import React , {useContext, useEffect, useRef, useState} from 'react';
 import ModalImage from "react-modal-image";
-
-
+import {ReactComponent as ResultsSVG} from '../images/no-image-icon-3.svg';
 //import {v4} from 'uuid';
 //import NoImage from './NoImage';
 import { UnsplashContext} from '../contexts/UnsplashContext';
 
+
 const ImageList = () => {
 
    // js image conditional 
-  const { images} = useContext(UnsplashContext);
+  const { images, errorHandler} = useContext(UnsplashContext);
+  //console.log(errorHandler)
+  //console.log(theWordBTN);
+  
+
   const [imgCurrent, setImgCurrent] = useState(0);
   const isInitialMount = useRef(true);
   //const isInitialMountFalse = useRef(false);
@@ -24,24 +28,11 @@ const ImageList = () => {
    }
 },[imgCurrent,setImgCurrent,isInitialMount,images]);
 
-const imageRef = useRef();
-
-
-// useEffect(() => {
-//    if (!isInitialMountFalse.current) {
-//       isInitialMountFalse.current = true;
-//       imageRef.current.style.background = "yellow"
-
-//    } else { 
-//       imageRef.current.style.background = "white"
-
-//    }
-// },[]);
 
 // renders conditional 
   const imageOutcome = images.length === 0 ? (
-   imgCurrent === 1  ?  <div className="no-image-container"> 
-   <h1>No images!</h1>
+   imgCurrent === 1 || errorHandler === true ?  <div className="no-image-container"> 
+   <div><ResultsSVG /><h1>No images available.</h1></div>
    </div>  : 
    <div  className="when-first-renders-container" style={{gridAutoRows: "0"}}>
      
@@ -50,9 +41,7 @@ const imageRef = useRef();
          images.map(img => {
            
       return (   
-         
-         <ModalImage
-         
+             <ModalImage        
          showRotate={true}
          hideDownload={true}
          key={img.id}
@@ -70,9 +59,9 @@ const imageRef = useRef();
         })
   )
 
-    return (     
-         <div ref={imageRef} className="image-container">       
-            {imageOutcome}          
+    return (         
+           <div  className="image-container">   
+            {imageOutcome} 
          </div>
      );
 }
@@ -144,3 +133,49 @@ useEffect(() => {
 */
 //<p><img alt="opening-random" className="" src="https://source.unsplash.com/random/800x500" /> </p>
 //console.log(imgCurrent);
+
+//const imageRef = useRef();
+
+
+// useEffect(() => {
+//    if (!isInitialMountFalse.current) {
+//       isInitialMountFalse.current = true;
+//       imageRef.current.style.background = "yellow"
+
+//    } else { 
+//       imageRef.current.style.background = "white"
+
+//    }
+// },[]);
+
+
+
+   // const searchInfo = theWordSearch === null && images.length === 0 || theWordBTN === null && images.length === 0  ? ( 
+   //    <div className="empty-results"></div>
+   //  ) :(
+   //    <SearchResultsInfo theWordSearch={theWordSearch} theWordButtonVal={theWordBTN} />
+   //  )
+   /*
+const searchInfo = images.length > 1 ? (
+   theWordSearch === null || theWordBTN === null  ? 
+      ? :
+   //<SearchResultsInfo theWordSearch={theWordSearch} />
+  //<div><h1>Search results for: {theWordSearch.val} </h1></div> 
+     : 
+     <p>no</p>
+   //   <ButtonResultsInfo theWordButtonVal={theWordBTN} />
+
+) : (
+   <div className="empty-results"></div>
+)
+*/
+
+
+//  const buttonInfo= theWordBTN === null && images.length === 0  ? ( 
+//    <div className="empty-results"></div>
+//  ) :(
+//    <ButtonResultsInfo theWordButtonVal={theWordBTN} />
+//  )
+
+// import SearchResultsInfo from './SearchResultsInfo';
+// import ButtonResultsInfo from './ButtonResultsInfo';

@@ -1,31 +1,55 @@
 
 // search bar ======================================
 .search-main-container {
-  margin: 40px auto 20px auto;
+  margin: 80px auto 20px auto;
     //background: lightblue;
     display: flex;
     width: auto;
-    .search-container {
-        margin: auto;
-    } 
-    .search-bar { 
-        width: 99%;
-        padding: 10px 20px;
-       border: 0 solid transparent;
-        border-radius: 20px 0 0 20px;  
-        
-        background-color: #eee;    
-
+    @media all and (max-width: 549px) {
+        margin: 80px auto 20px auto;
     }
-    .search-icon-container {
-        background-color: #eee; 
-        cursor:pointer;
-        border: 0 solid transparent;
-        padding: 6px;
-        border-radius: 0 20px 20px 0;
+    .search-wrapper {
+        margin: auto;
+               
+   
+    .form-search {
 
-            
-    } 
+        display: flex;
+        .search-bar { 
+            width: 500px;
+            padding: 15px 20px;
+           border: 0 solid transparent;
+            border-radius: 40px 0 0 40px;         
+            background-color: #eee;    
+    
+        }
+        @media all and (max-width: 620px) {
+            .search-bar {
+                width: 300px;
+            }
+        }
+        @media all and (max-width: 400px) {
+            .search-bar {
+                width: 250px;
+            }
+        }
+        @media all and (max-width: 400px) {
+            .search-bar {
+                width: 250px;
+            }
+        }
+        .search-icon-container {
+            background-color: #eee; 
+            cursor:pointer;
+            border: 0 solid transparent;
+            padding: 6px 20px 6px 0;
+            border-radius: 0 40px 40px 0;
+    
+                
+        } 
+    }
+}
+    
 }
 
 
@@ -39,10 +63,10 @@
 
   // random word ===================================================
 .lucky-container {
-
+   
 
     width: auto;
-    font-size: 1.1rem;
+  
    // background: lightgrey;
     display: flex;
     margin: 0 auto;
@@ -52,6 +76,13 @@
         display: block;
         margin: auto;
         .lucky-button {
+            @media all and (max-width: 550px) {
+            
+                    font-size: 0.9rem;
+               
+            }
+            font-size: 1rem;
+            font-weight: 700;
             transition: all 0.3s;
             background: #fff;
             border-radius: 5px;
@@ -70,12 +101,17 @@
 
 // button suggestions ===========================================================
 .button-main-container {
-    margin: 40px auto;
-    width: 100%;
+    //background: #eee;
+    margin: 100px auto;
+    width: 600px;
+    @media all and (max-width: 550px) {
+        width: 96%;
+        margin: 80px auto 50px auto;
+    }
 .button-title {
     margin-bottom: 20px;
     padding-left: 6px;
-    font-size: 1.3rem;
+    font-size: 1rem*1.618;
 }
 .buttons-container {
     display: flex;
@@ -87,6 +123,7 @@
     width: auto;
     //background: lightyellow;
     @media all and (max-width: 501px) {
+       // height: 0 !important;
         width: 100%;
 }
     button {
@@ -100,7 +137,11 @@
         font-weight: 500;
      margin: 8px;
      transition: all 0.3s;
-    
+     font-size: 1rem;
+     @media all and (max-width: 600px) {
+        font-size: 1rem;
+      
+ }
     }
 
     button:hover {

@@ -26,8 +26,8 @@ const SearchBar = () => {
     }
 
     return ( 
-        <div className="search-container">
-             <form onSubmit={onFormSubmit}>                  
+        <div className="search-wrapper">
+             <form className="form-search" onSubmit={onFormSubmit}>                  
                  {/* <label htmlFor="search"><h2>Image Search: </h2></label> */}
                  <input placeholder="Search photos" className="search-bar" type="text" value={search.val} onChange={onInputChange} /> 
                  <button className="search-icon-container" onChange={onInputChange} value={search}>

@@ -3,9 +3,9 @@ import React from 'react';
 const Footer = () => {
 
     const yearAndYears = new Date().getFullYear();
-    console.log(yearAndYears)
+    //console.log(yearAndYears)
     return ( 
-        <footer><p>made by <a href="https://musaamuhsen.com/">musaamuhsen.com</a> &copy; {yearAndYears}</p></footer>
+        <footer><p>Made by <a href="https://musaamuhsen.com/" rel="noopener noreferrer" target="_blank">musaamuhsen.com</a> &copy; {yearAndYears}</p></footer>
      );
 }
  
