@@ -6,7 +6,7 @@ import { UnsplashContext } from '../contexts/UnsplashContext';
 
 const FeelingLucky = () => {
 
-    const {wordContextSeven } = useContext(WordContext);
+    const {wordContextLucky } = useContext(WordContext);
     const {onButtonSubmit} = useContext(UnsplashContext);
     const [feelLuckyState, setFeelLuckyState] = useState({data: ''});
     
@@ -25,7 +25,7 @@ const FeelingLucky = () => {
     return ( 
         <div className="lucky-container">
             <form className="lucky-btn-form" onSubmit={onFormSubmit}>
-              <button className="lucky-button" onClick={onInputChange} value={wordContextSeven}>A random word</button>
+              <button className="lucky-button" onClick={onInputChange} value={wordContextLucky}>A random word</button>
            </form> 
         </div>
      );

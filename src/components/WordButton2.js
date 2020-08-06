@@ -7,7 +7,7 @@ import { UnsplashContext } from '../contexts/UnsplashContext';
 const WordButtonTwo = () => {
 
     
-    const {wordContextOne,wordContextTwo,wordContextThree,wordContextFour,wordContextFive,wordContextSix } =  useContext(WordContext);
+    const {wordContextOne,wordContextTwo,wordContextThree,wordContextFour,wordContextFive,wordContextSix,wordContextSeven, wordContextEight, wordContextNine, wordContextTen  } =  useContext(WordContext);
     const {onButtonSubmit} = useContext(UnsplashContext);
    // console.log(onButtonSubmit)
 
@@ -39,15 +39,10 @@ const WordButtonTwo = () => {
                 <button onClick={onInputChange} value={wordContextFour}>{wordContextFour}</button>
                 <button onClick={onInputChange} value={wordContextFive}>{wordContextFive}</button>
                 <button onClick={onInputChange} value={wordContextSix}>{wordContextSix}</button> 
-                <button onClick={onInputChange} value={wordContextOne}>{wordContextOne}</button>
-                <button onClick={onInputChange} value={wordContextTwo}>{wordContextTwo}</button>
-                <button onClick={onInputChange} value={wordContextThree}>{wordContextThree}</button>  
-                <button onClick={onInputChange} value={wordContextFour}>{wordContextFour}</button>
-                <button onClick={onInputChange} value={wordContextFive}>{wordContextFive}</button>
-                <button onClick={onInputChange} value={wordContextSix}>{wordContextSix}</button> 
-                <button onClick={onInputChange} value={wordContextOne}>{wordContextOne}</button>
-                <button onClick={onInputChange} value={wordContextTwo}>{wordContextTwo}</button>
-  
+                <button onClick={onInputChange} value={wordContextSeven}>{wordContextSeven}</button>
+                <button onClick={onInputChange} value={wordContextEight}>{wordContextEight}</button>
+                <button onClick={onInputChange} value={wordContextNine}>{wordContextNine}</button>  
+                <button onClick={onInputChange} value={wordContextTen}>{wordContextTen}</button>
            </form> 
        
      );

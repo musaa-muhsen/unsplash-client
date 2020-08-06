@@ -25,7 +25,8 @@ const UnsplashContextComp = (props) => {
 
 const onButtonSubmit = async (word) => {
     try {
-      //setTheWordBTN(word);
+      //setTheWordBTN(word);,
+  //"proxy": "http://localhost:5004"
    const response = await fetch(`/api/${word}`);   
    const unsplashData = await response.json();
    setImages(unsplashData.results)
