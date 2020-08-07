@@ -1,6 +1,6 @@
 {
-  "short_name": "Photostock Helper App",
-  "name": "Photostock Helper App",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
