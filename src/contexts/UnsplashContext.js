@@ -30,7 +30,6 @@ const onButtonSubmit = async (word) => {
    const response = await fetch(`/api/${word}`);   
    const unsplashData = await response.json();
    setImages(unsplashData.results)
-   //console.log(unsplashData)
        } catch (err) { 
     console.log(err);
     setErrorHandler(true);
