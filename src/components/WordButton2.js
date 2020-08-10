@@ -29,8 +29,6 @@ const WordButtonTwo = () => {
 
     return (   
          
-        
-
            <form className="buttons-container" onSubmit={onFormSubmit}>
                {/* <button onClick={() => setButtonData({ data: buttonOne })}>{buttonOne}</button> */}
                <button onClick={onInputChange} value={wordContextOne}>{wordContextOne}</button>
